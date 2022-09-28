@@ -1,9 +1,12 @@
+import * as dotenv from 'dotenv' 
+dotenv.config()
+import express from 'express'
 export const configuration = {
   server: {
-    port: 3000,
+    PORT: process.env.PORT || 3000,
   },
   dataBase: {
-    url: "mongodb+srv://movies:movies@cluster0.w75zoik.mongodb.net/?retryWrites=true&w=majority",
+    URL: process.env.URL,
   },
   middleware: {},
   services: {},

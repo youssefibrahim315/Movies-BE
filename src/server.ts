@@ -1,7 +1,7 @@
 import app from "./app";
 import { configuration } from "./config";
 import startConnection from "./loaders/DBConection";
-const port: number = configuration.server.port;
+const port: number = configuration.server.port || 3000;
 
 const boot = async () => {
   await startConnection();

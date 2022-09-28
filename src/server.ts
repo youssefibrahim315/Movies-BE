@@ -4,9 +4,9 @@ import startConnection from "./loaders/DBConection";
 const PORT = configuration.server.PORT || 3000;
 
 const boot = async () => {
-  await startConnection();
+  startConnection();
 
-  app.listen(PORT, () => {
+ app.listen(PORT, () => {
     console.log("we are run now on port q", PORT);
   });
 };

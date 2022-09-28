@@ -1,0 +1,457 @@
+{
+	"info": {
+		"_postman_id": "d0de584c-e110-437a-ba0f-a7aa734953b6",
+		"name": "Movies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14663057"
+	},
+	"item": [
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "movie",
+					"item": [
+						{
+							"name": "movies",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/movies/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movies",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movies",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n      \"name\":\"lions 3\",\r\n      \"description\": \"description 3\",\r\n      \"imageUrl\": \"imageUrl 3\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movies/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movies",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movies Copy",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n      \"title\":\"youssef\",\r\n      \"year\": \"2021\",\r\n      \"lang\": \"en\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/movies/{{movieId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movies",
+										"{{movieId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movies",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/movies/{{movieId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"movies",
+										"{{movieId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n      \"title\":\"youssef\",\r\n      \"year\": \"2022\",\r\n      \"lang\": \"en\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movieList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/movieList/{{userId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"movieList",
+										"{{userId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "userById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/{{userId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"{{userId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"youssef\",\r\n    \"email\": \"youssefibrahim315@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/{{userId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"{{userId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movieList",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movies\": [\r\n        {\r\n            \"movieId\": \"6333d21a04fd34f2aacc4a4d\",\r\n            \"name\": \"lions\",\r\n            \"description\": \"description\",\r\n            \"imageUrl\": \"imageUrl\",\r\n            \"rank\": 3\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/movieList/{{userId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"movieList",
+										"{{userId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n      \"userName\":\"youssef\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/{{userId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"{{userId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/{{userId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"{{userId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "list",
+					"item": [
+						{
+							"name": "list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/list/userList/{{userId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"list",
+										"userList",
+										"{{userId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"listName\": \"list 4\",\r\n    \"userId\": \"6333d23704fd34f2aacc4a50\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"listName\": \"listName\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/list/{{listId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"list",
+										"{{listId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "moviesList",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movies\": [\r\n        {\r\n            \"movieId\": \"6333d21a04fd34f2aacc4a4d\",\r\n            \"name\": \"lions\",\r\n            \"description\": \"description\",\r\n            \"imageUrl\": \"imageUrl\",\r\n            \"rank\": 3\r\n        },\r\n        {\r\n            \"name\": \"lions 2\",\r\n            \"description\": \"description 2\",\r\n            \"imageUrl\": \"imageUrl 2\",\r\n            \"movieId\": \"6333d6e9a0fe09a2b9de5f66\",\r\n            \"rank\": 5\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/list/movies/{{listId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"list",
+										"movies",
+										"{{listId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/list/{{listId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"list",
+										"{{listId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{Token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "movieId",
+			"value": "6333d21a04fd34f2aacc4a4d",
+			"type": "string"
+		},
+		{
+			"key": "userId",
+			"value": "6333d23704fd34f2aacc4a50",
+			"type": "string"
+		},
+		{
+			"key": "listId",
+			"value": "6333d4f96324e74496f64bdb",
+			"type": "string"
+		},
+		{
+			"key": "url",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}

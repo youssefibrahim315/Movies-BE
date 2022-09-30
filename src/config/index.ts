@@ -3,7 +3,7 @@ dotenv.config()
 import express from 'express'
 export const configuration = {
   server: {
-    PORT: process.env.PORT || 3000,
+    PORT: process.env.PORT,
   },
   dataBase: {
     URL: process.env.URL,

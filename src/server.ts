@@ -5,7 +5,7 @@ const PORT = configuration.server.PORT || 3000;
 
 const boot = async () => {
   try {
-    startConnection();
+    await startConnection();
     app.listen(PORT, () => {
       console.log("we are run now on port q", PORT);
     });

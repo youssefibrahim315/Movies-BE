@@ -10,6 +10,64 @@
 			"name": "API",
 			"item": [
 				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"youssef\",\r\n    \"email\": \"44444@gmail.com\",\r\n    \"fullName\": \"youssef ibrahim zaref\",\r\n    \"birthDate\": \"1/10/1994\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logIn",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"youssefibrahim315@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "movie",
 					"item": [
 						{
@@ -25,6 +83,33 @@
 									"path": [
 										"movies",
 										""
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "222222222222222",
+											"disabled": true
+										},
+										{
+											"key": "category",
+											"value": "6367895063afd8addade9e21",
+											"disabled": true
+										},
+										{
+											"key": "rate",
+											"value": "7",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -37,7 +122,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n      \"name\":\"lions 3\",\r\n      \"description\": \"description 3\",\r\n      \"imageUrl\": \"imageUrl 3\"\r\n    }",
+									"raw": "{\r\n      \"name\":\"222222222222222 \",\r\n      \"description\": \"dddddddddddddddddddddddd\",\r\n      \"imageUrl\": \"https://s.studiobinder.com/wp-content/uploads/2019/09/Movie-Genres-Types-of-Movies-List-of-Genres-and-Categories-Header-StudioBinder.jpg\",\r\n      \"rate\":{\"userId\":\"6367948af7f59d0b3ccfc798\",\"vote\":8},\r\n      \"categoriesIds\":[\"6367895063afd8addade9e21\",\"6367894963afd8addade9e1f\"]\r\n    }",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -64,7 +149,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n      \"title\":\"youssef\",\r\n      \"year\": \"2021\",\r\n      \"lang\": \"en\"\r\n    }",
+									"raw": "{\r\n    \"name\": \"22 \",\r\n    \"description\": \"2\",\r\n    \"imageUrl\": \"https://s.studiobinder.com/wp-content/uploads/2019/09/Movie-Genres-Types-of-Movies-List-of-Genres-and-Categories-Header-StudioBinder.jpg\",\r\n    \"rate\": {\r\n        \"userId\": \"6367948af7f59d0b3ccfc798\",\r\n        \"vote\": 8\r\n    },\r\n    \"categoriesIds\": [\r\n        \"6367895063afd8addade9e21\",\r\n            \"6367894963afd8addade9e1f\"\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -79,6 +164,13 @@
 									"path": [
 										"movies",
 										"{{movieId}}"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "63679637f7f59d0b3ccfc7af",
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -108,13 +200,20 @@
 					"name": "user",
 					"item": [
 						{
-							"name": "user",
+							"name": "AllUsers",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzY3N2JkNGVmMjIzZmM2ODY0MjNhMzMiLCJleHAiOjE2Njc3MzgwOTkuNzk1LCJpYXQiOjE2Njc3MjcyOTl9.FY1YBNnF0RHLOct2it7tSWZ69gKcOaAhwtxCMg2gTZxRCD4DEsBiDhwV8VXwn52BfEu-vsGyJOt4XU2dhEJxGQ",
+										"type": "text",
+										"disabled": true
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\r\n      \"title\":\"youssef\",\r\n      \"year\": \"2022\",\r\n      \"lang\": \"en\"\r\n    }",
@@ -138,25 +237,6 @@
 							"response": []
 						},
 						{
-							"name": "movieList",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/user/movieList/{{userId}}",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"user",
-										"movieList",
-										"{{userId}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "userById",
 							"request": {
 								"method": "GET",
@@ -168,61 +248,6 @@
 									],
 									"path": [
 										"user",
-										"{{userId}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "user",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"userName\": \"youssef\",\r\n    \"email\": \"youssefibrahim315@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/user/{{userId}}",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"user",
-										"{{userId}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "movieList",
-							"request": {
-								"method": "PATCH",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"movies\": [\r\n        {\r\n            \"movieId\": \"6333d21a04fd34f2aacc4a4d\",\r\n            \"name\": \"lions\",\r\n            \"description\": \"description\",\r\n            \"imageUrl\": \"imageUrl\",\r\n            \"rank\": 3\r\n        }\r\n    ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/user/movieList/{{userId}}",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"user",
-										"movieList",
 										"{{userId}}"
 									]
 								}
@@ -277,35 +302,156 @@
 					]
 				},
 				{
-					"name": "list",
+					"name": "Category",
 					"item": [
 						{
 							"name": "list",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "name",
+										"value": "Action",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "page",
+										"value": "1",
+										"type": "text",
+										"disabled": true
+									}
+								],
 								"url": {
-									"raw": "{{url}}/list/userList/{{userId}}",
+									"raw": "{{url}}/category/",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"list",
-										"userList",
-										"{{userId}}"
+										"category",
+										""
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "Action",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "order",
+											"value": "ascend",
+											"disabled": true
+										},
+										{
+											"key": "orderBy",
+											"value": "",
+											"disabled": true
+										}
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "list",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/category/?Name=",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"category",
+												""
+											],
+											"query": [
+												{
+													"key": "Name",
+													"value": ""
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "list By Category",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/category/?Category",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"category",
+												""
+											],
+											"query": [
+												{
+													"key": "Category",
+													"value": null
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "list By rate",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/category/?rate",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"category",
+												""
+											],
+											"query": [
+												{
+													"key": "rate",
+													"value": null
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
 						},
 						{
-							"name": "list",
+							"name": "create",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"listName\": \"list 4\",\r\n    \"userId\": \"6333d23704fd34f2aacc4a50\"\r\n\r\n}",
+									"raw": "{\r\n    \"title\":\"horror\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -313,25 +459,26 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/list",
+									"raw": "{{url}}/category/",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"list"
+										"category",
+										""
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "list",
+							"name": "update",
 							"request": {
 								"method": "PATCH",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"listName\": \"listName\"\r\n}",
+									"raw": "{\r\n    \"title\": \"horrorrrr\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -339,59 +486,31 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/list/{{listId}}",
+									"raw": "{{url}}/category/6367895063afd8addade9e21",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"list",
-										"{{listId}}"
+										"category",
+										"6367895063afd8addade9e21"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "moviesList",
-							"request": {
-								"method": "PATCH",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"movies\": [\r\n        {\r\n            \"movieId\": \"6333d21a04fd34f2aacc4a4d\",\r\n            \"name\": \"lions\",\r\n            \"description\": \"description\",\r\n            \"imageUrl\": \"imageUrl\",\r\n            \"rank\": 3\r\n        },\r\n        {\r\n            \"name\": \"lions 2\",\r\n            \"description\": \"description 2\",\r\n            \"imageUrl\": \"imageUrl 2\",\r\n            \"movieId\": \"6333d6e9a0fe09a2b9de5f66\",\r\n            \"rank\": 5\r\n        }\r\n    ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/list/movies/{{listId}}",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"list",
-										"movies",
-										"{{listId}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "list",
+							"name": "delete",
 							"request": {
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/list/{{listId}}",
+									"raw": "{{url}}/category/636786f062c4c8a1a9a48603",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"list",
-										"{{listId}}"
+										"category",
+										"636786f062c4c8a1a9a48603"
 									]
 								}
 							},
@@ -435,22 +554,27 @@
 	"variable": [
 		{
 			"key": "movieId",
-			"value": "6333d21a04fd34f2aacc4a4d",
+			"value": "63679637f7f59d0b3ccfc7af",
 			"type": "string"
 		},
 		{
 			"key": "userId",
-			"value": "6333d23704fd34f2aacc4a50",
-			"type": "string"
-		},
-		{
-			"key": "listId",
-			"value": "6333d4f96324e74496f64bdb",
+			"value": "6367a66f839a537383d0d3f3",
 			"type": "string"
 		},
 		{
 			"key": "url",
 			"value": "localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "u",
+			"value": "https://movies200.herokuapp.com",
+			"type": "string"
+		},
+		{
+			"key": "Token",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzY3OTQ4YWY3ZjU5ZDBiM2NjZmM3OTgiLCJleHAiOjE2Njc3NDM0MzcuNDM5LCJpYXQiOjE2Njc3MzI2Mzd9.jen6_IzEIDuwihbc_ThRgUs4Lv0xVXfvyGjRBvNf5bUGxB3CTAAxieQgpDcFW-S7fUqdHsx7ex2uLiLzNt8f1zeY61FWQzcDHV4qVXNS_O7X9PRtRVIghJX30Yd78YgfiTBPgmxT_rCWXlCy3W0GBgWBLGjWFm_5tpd9tMQ-Audk2NjmfoA_OE1j8qZuu6DBiaGj6a4SkTh8ZRBhsRFU8SpZFqOA7uNfM3CilLD6B1bjJuE2J9W-htSNC67GU2W95DyHqD9SXAQ72Xl-FRE_dmr-ZDR2E04FfL6g1H5JfCyCc8gqohVOa2brakK556kjYdNrnxm42b6Az3Wt0Gj1ZQ",
 			"type": "string"
 		}
 	]

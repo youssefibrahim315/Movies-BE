@@ -8,6 +8,11 @@ export const configuration = {
   dataBase: {
     URL: process.env.URL,
   },
-  middleware: {},
+  middleware: {
+    jwtPublicKey:process.env.SECRET, //JWT
+    jwtAlgorithm:process.env.ALGORITHM,  //JWT
+    jwtPrivateKey:process.env.PRIVATEKEY,  //JWT
+
+  },
   services: {},
 };

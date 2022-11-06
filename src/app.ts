@@ -1,8 +1,8 @@
 import "reflect-metadata"; // We need this in order to use @Decorators
-import express, { Application, Request, Response } from "express";
-import { configuration } from "./config";
+import express, { Application} from "express";
 import cors from "cors";
-import  routes  from "./routes";
+import  routes  from "./Api/routes";
+import { errors } from "celebrate";
 
 var bodyParser = require('body-parser')
 
@@ -18,5 +18,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(routes());
+
+app.use(errors());
+app.use(()=>{throw new Error("un Know Error")});
 
 export default app

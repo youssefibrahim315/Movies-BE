@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import extendSchema from "mongoose-extend-schema";
-import { IMovieModelSchema } from "../interfaces/IMovieModelSchema";
+import { IMovieModelSchema } from "../../interfaces/IMovieModelSchema";
 import BaseSchema from "./baseModel";
 const Schema = mongoose.Schema;
 
@@ -19,6 +19,18 @@ const Movie = extendSchema(
       type: String,
       required: true,
     },
+    rate:[{
+      userId:{
+        type:String,
+      },
+      vote:{
+        type:Number,
+      }
+    }],
+    categoriesIds:[{
+      type:String,
+      require:true
+    }]
   },
   { timestamps: true },
 );

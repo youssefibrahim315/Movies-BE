@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import extendSchema from "mongoose-extend-schema";
-import { IUserModelSchema } from "../interfaces";
+import { IUserModelSchema } from "../../interfaces";
 import BaseSchema from "./baseModel";
 const Schema = mongoose.Schema;
 
@@ -11,34 +11,32 @@ const User = extendSchema(
       type: String,
       require: true,
     },
+    fullName: {
+      type: String,
+      require: true,
+    },
     email: {
       type: String,
       required: true,
+      unique: true
     },
     password: {
-      type: String,
+      hash: {
+        type: String,
+      }, salt: {
+        type: String,
+      }
     },
-    movies: [
-      {
-        movieId: {
-          type: Schema.Types.ObjectId,
-          ref: "movie",
-        },
-
-        title: {
-          type: String,
-        },
-        description: {
-          type: String,
-        },
-        imageUrl: {
-          type: String,
-        },
-        rank: {
-          type: Number,
-        },
-      },
-    ],
+    birthDate: {
+      type: Date,
+      require: true,
+    },
+    myFavorite: [{
+      type: String,
+    }],
+    lastRated: [{
+      type: String,
+    }],
   },
   { timestamps: true }
 );

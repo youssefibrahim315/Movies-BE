@@ -5,17 +5,18 @@ import movieModel from "../models/movie";
 @Service()
 export default class movieService {
   public async getMovie(filterationFeilds?): Promise<IMovieModelSchema[]> {
-    let filters: any = {isDeleted: false}
-      if (filterationFeilds) {
-      console.log(filterationFeilds);
-
+    let filters: any = { isDeleted: false }
+    if (filterationFeilds) {
       await Object.keys(filterationFeilds).forEach((key) => {
-          console.log(key,filterationFeilds[key]);
+        if (key === "rate") {
           filters[`${key}.vote`] = filterationFeilds[key]
+        } else {
+          filters[key] = filterationFeilds[key]
+
+        }
+
       })
     }
-    console.log(filters);
-
     const movie: IMovieModelSchema[] = await movieModel.find(filters).sort({ createdAt: -1 });
     return movie;
   }
@@ -42,8 +43,8 @@ export default class movieService {
           name: MovieDetails.name,
           description: MovieDetails.description,
           imageUrl: MovieDetails.imageUrl,
-          rate:MovieDetails.rate,
-          categoriesIds:MovieDetails.categoriesIds,
+          rate: MovieDetails.rate,
+          categoriesIds: MovieDetails.categoriesIds,
         },
       }
     );
